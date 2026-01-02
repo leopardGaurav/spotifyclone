@@ -183,32 +183,49 @@ a {
     margin-right: 1rem;
 }
 
+/* ------------------------------------------ */ 
 
 .card{
-    background-color:#232323 ;
-    width: 150px;
-    border-radius: 0.5rem;
-    padding: 1rem ;
+    background-color:#232323;
+    width: 360px;          /* 👉 width yahan badhi */
+    height: 340px;         /* 👉 height yahan add */
+    border-radius: 0.75rem;
+    padding: 1.25rem;
     margin-left: 1.5rem;
+
+    display: flex;         /* 👉 content adjust ke liye */
+    flex-direction: column;
+    justify-content: space-between;
 }
+
 
 .cards-container {
     display: flex;
 
 }
 .card-img{
-    width:100%;
+    width: 100%;
+    height: 190px;         /* 👉 image height yahan */
     border-radius: 0.5rem;
+    object-fit: cover;     /* 👉 image stretch fix */
 }
+
 
 .card-title{
     font-weight: 600;
+    font-size: 1.15rem;    /* 👉 text size yahan */
+    margin-top: 0.75rem;
+    background-color:#232323;
 }
 
+
 .card-info{
-    font-size: 0.85rem;
+    font-size: 0.95rem;    /* 👉 text bada */
     opacity: 0.8;
+    margin-top: 0.4rem;
+    background-color:#232323;
 }
+
 
 .cards-container{
      display: flex;
@@ -217,9 +234,11 @@ a {
   scroll-behavior: smooth;
 }
 .cards-container .card{
-     min-width: 250px;  /* ya jitni chhahiye utni width */
-  flex: 0 0 auto;
+    min-width: 360px;      /* 👉 card width ke barabar */
 }
+
+
+/* ------------------------------------------ */
 .footer{
     height:250px;
     display: flex;
