@@ -237,6 +237,11 @@ a {
     min-width: 360px;      /* 👉 card width ke barabar */
 }
 
+.card.playing {
+    border: 2px solid #1db954;
+    box-shadow: 0 0 10px #1db954;
+}
+
 
 /* ------------------------------------------ */
 .footer{
