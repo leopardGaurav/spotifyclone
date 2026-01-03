@@ -11,31 +11,45 @@ const totTime = document.querySelector('.tot-time');
 
 let currentTrackIndex = 0;
 
-// Function to load song details in global player
+// Function to format time (mm:ss)
+function formatTime(sec) {
+    if (isNaN(sec)) return "00:00";
+    let minutes = Math.floor(sec / 60);
+    let seconds = Math.floor(sec % 60);
+    return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+}
+
+// Function to load song and update UI
 function loadSong(card) {
     const src = card.getAttribute('data-src');
     const title = card.getAttribute('data-title');
     const artist = card.getAttribute('data-artist');
     const img = card.getAttribute('data-img');
 
+    console.log("Loading song:", src);
+
     if (!src) {
-        console.warn('No data-src for this card - cannot play');
-        return;  // Skip if no audio source
+        console.warn('No data-src for this card');
+        return;
     }
 
     globalAudio.src = src;
+    globalAudio.play().catch(err => console.error("Audio play failed:", err));
+
+    // Update UI
     songName.textContent = title || 'Unknown Song';
     artistName.textContent = artist || 'Unknown Artist';
     albumCover.src = img || '';
-    globalAudio.play();
-    playBtn.classList.replace('fa-circle-play', 'fa-circle-pause');
 
-    // Remove 'playing' from all cards, add to current
+    // Highlight current card
     cards.forEach(c => c.classList.remove('playing'));
     card.classList.add('playing');
+
+    // Set play button to pause
+    playBtn.classList.replace('fa-circle-play', 'fa-circle-pause');
 }
 
-// Card click → load song in global player
+// Click on card → load song
 cards.forEach((card, index) => {
     card.addEventListener('click', () => {
         currentTrackIndex = index;
@@ -46,7 +60,7 @@ cards.forEach((card, index) => {
 // Play/Pause button
 playBtn.addEventListener('click', () => {
     if (globalAudio.paused) {
-        globalAudio.play();
+        globalAudio.play().catch(err => console.error("Audio play failed:", err));
         playBtn.classList.replace('fa-circle-play', 'fa-circle-pause');
     } else {
         globalAudio.pause();
@@ -54,7 +68,7 @@ playBtn.addEventListener('click', () => {
     }
 });
 
-// Update progress bar
+// Update progress bar and times
 globalAudio.addEventListener('timeupdate', () => {
     if (globalAudio.duration) {
         progressBar.value = (globalAudio.currentTime / globalAudio.duration) * 100;
@@ -63,15 +77,7 @@ globalAudio.addEventListener('timeupdate', () => {
     }
 });
 
-// Seek song
+// Seek audio using progress bar
 progressBar.addEventListener('input', () => {
     globalAudio.currentTime = (progressBar.value / 100) * globalAudio.duration;
 });
-
-// Helper function for time formatting
-function formatTime(sec) {
-    if (isNaN(sec)) return "00:00";
-    let minutes = Math.floor(sec / 60);
-    let seconds = Math.floor(sec % 60);
-    return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
-}
