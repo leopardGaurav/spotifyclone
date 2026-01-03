@@ -1,279 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="icon" href="spotifyclone/spotify-logo-transparent-icon-2.png">
-    <title>Spotify-web player: music for everyone</title>
-    <!--google font-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <!--css file-->
-    <link rel="stylesheet" href="spotify.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="icon" href="spotifyclone/spotify-logo-transparent-icon-2.png">
+<title>Spotify-web player: music for everyone</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="spotify.css">
 </head>
 <body>
-    <div class="main">
-        <div class="sidebar">
-            <div class="nav">
-                <div class="nav-option" style="opacity:1;">
-                    <i class="fa-solid fa-house"></i>
-                    <a href="#">Home</a>
-                </div>
-                <div class="nav-option">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    <a href="#">Search</a>
-                </div>
-               </div>
-              <div class="library">
-                    <div class="options">
-                   <div class="lib-option">
-                  <a href="#">Your Library</a>
-              </div>
-             <div class="icons">
-                  <i class="fa-solid fa-plus"></i>
-                  <i class="fa-solid fa-arrow-right"></i>
-             </div>
+
+<div class="main">
+    <div class="sidebar">
+        <div class="nav">
+            <div class="nav-option" style="opacity:1;">
+                <i class="fa-solid fa-house"></i>
+                <a href="#">Home</a>
             </div>
+            <div class="nav-option">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <a href="#">Search</a>
+            </div>
+        </div>
+
+        <div class="library">
+            <div class="options">
+                <div class="lib-option">
+                    <a href="#">Your Library</a>
+                </div>
+                <div class="icons">
+                    <i class="fa-solid fa-plus"></i>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+            </div>
+
             <div class="lib-box">
-                <div class="box" >
+                <div class="box">
                     <p class="box-p1">Create your first playlist</p>
                     <p class="box-p2">it's easy, we'll help you</p>
                     <button class="badge">Create playlist</button>
                 </div>
             </div>
-                        <div class="lib-box">
-                <div class="box" >
+
+            <div class="lib-box">
+                <div class="box">
                     <p class="box-p1">Let's find some podcasts to follow</p>
-                    <p class="box-p2">we'll keep you updated on new episodes </p>
-                    <button class="badge">browse podcasts </button>
+                    <p class="box-p2">we'll keep you updated on new episodes</p>
+                    <button class="badge">Browse podcasts</button>
                 </div>
             </div>
         </div>
     </div>
-    <!-- ------------------------------------------------------------------- -->
+
+    <!-- Main Content -->
     <div class="main-content">
         <div class="sticky-nav">
             <div class="sticky-nav-option">
                 <i class="fa-solid fa-less-than"></i>
-            <i class="fa-solid fa-greater-than" class="hide"></i>
-            
+                <i class="fa-solid fa-greater-than"></i>
             </div>
-             <div class="sticky-nav-icon">
-                <button class="badge nav-item">Explore premium </button>
-            <button class="badge nav-item dark-badge"><i class="fa-solid fa-circle-down" style="margin-right:5px"></i>install App </button>
-            <i class="fa-solid fa-user"></i>
+            <div class="sticky-nav-icon">
+                <button class="badge nav-item">Explore premium</button>
+                <button class="badge nav-item dark-badge"><i class="fa-solid fa-circle-down" style="margin-right:5px"></i>Install App</button>
+                <i class="fa-solid fa-user"></i>
             </div>
         </div>
 
-
-            <h2>Recently played</h2>
-            <div class="cards-container">
-                <div class="card">
-                    <img src="mytopspotify_mytopsongs_thumbnail_web.jpg" class="card-img">
-                    <p class="card-title">Top 50-Global</p>
-                    <p class="card-info">your daily updates of the most played tracks</p>
-                    <audio class="card-audio" src="" ></audio>
-                </div>
+        <!-- Recently Played -->
+        <h2>Recently played</h2>
+        <div class="cards-container">
+            <div class="card" data-src="T2-3.mp3" data-title="Top 50-Global" data-artist="Spotify" data-img="mytopspotify_mytopsongs_thumbnail_web.jpg">
+                <img src="mytopspotify_mytopsongs_thumbnail_web.jpg" class="card-img">
+                <p class="card-title">Top 50-Global</p>
+                <p class="card-info">Your daily updates of the most played tracks</p>
             </div>
+        </div>
 
-
-             <h2>Trending now near you </h2>
-            <div class="cards-container">
-                <div class="card" 
-                data-src="Alex_Warren_-_Ordinary__Official_Lyric_Video_(128k).m4a"
-                data-title="“Ordinary” – Alex Warren"
-                data-artist="Alex Warren"
-                data-img="img trend 1.jpg"
-                >
-                    <img src="img trend 1.jpg" class="card-img">
-                    <p class="card-title">“Ordinary” – Alex Warren</p>
-                    <p class="card-info">I’ll give a 1-line English highlight for each song. Let’s go! 🎵</p>
-                    
-                </div>
-                <div class="card">
-                    <img src="img trend 2.jpg" class="card-img">
-                    <p class="card-title">“Anxiety” – Doechii</p>
-                    <p class="card-info">A bold, introspective anthem blending hip-hop storytelling.</p>
-                    <audio class="song">
-                        <source src="T1-2.mp3" type="audio/.mp3">
-                    </audio>
-                </div>
-                <div class="card">
-                    <img src="img trend 3.webp" class="card-img">
-                    <p class="card-title">“Pink Pony Club” – Chappell Roan</p>
-                    <p class="card-info">An empowering queer-joy anthem celebrating self-acceptance </p>
-                    <audio class="song">
-                        <source src="T1-3.mp3" type="audio/mp3">
-                    </audio>
-                </div>
-                <div class="card">
-                    <img src="img trend 4.webp" class="card-img">
-                    <p class="card-title">“Nokia” – Drake</p>
-                    <p class="card-info">Energetic rap-pop anthem sampling the iconic Nokia ringtone</p>
-                    <audio class="song">
-                        <source src="T1-4.mp3" type="audio/mp3">
-                    </audio>
-                </div>
-                <div class="card">
-                    <img src="img trend 5.jpeg" class="card-img">
-                    <p class="card-title">“What I Want” – Morgan Wallen ft. Tate McRae</p>
-                    <p class="card-info">Debuted at No 1; first female-led Wallen duet, blending country-pop</p>
-                    <audio class="song">
-                        <source src="T1-5.mp3" type="audio/mp3">
-                    </audio>
-                </div>
+        <!-- Trending now near you -->
+        <h2>Trending now near you</h2>
+        <div class="cards-container">
+            <div class="card" data-src="Alex_Warren_-_Ordinary__Official_Lyric_Video_(128k).m4a" data-title="Ordinary – Alex Warren" data-artist="Alex Warren" data-img="img trend 1.jpg">
+                <img src="img trend 1.jpg" class="card-img">
+                <p class="card-title">“Ordinary” – Alex Warren</p>
+                <p class="card-info">I’ll give a 1-line English highlight for each song. Let’s go! 🎵</p>
             </div>
-
-             <h2>Trending now near you </h2>
-            <div class="cards-container">
-                <div class="card">
-                    <img src="img trend 6.jpg" class="card-img">
-                    <p class="card-title">Shubh – “Supreme”</p>
-                    <p class="card-info">Dominant Punjabi anthem topping Spotify India and entering global charts</p>
-                    <audio class="song">
-                        <source src="T2-1.mp3" type="audio/mp3">
-                    </audio>
-                </div>
-                <div class="card">
-                    <img src="img trend 7.jpg" class="card-img">
-                    <p class="card-title">Sachet–“Raanjhan” </p>
-                    <p class="card-info">Massive Bollywood ballad, dominated India’s Spotify</p>
-                    <audio class="song">
-                        <source src="T2-2.mp3" type="audio/mp3">
-                    </audio>
-                </div>
-                <div class="card">
-                    <img src="img trend 8.jpg" class="card-img">
-                    <p class="card-title">Anuv Jain – “Jo Tum Mere Ho”</p>
-                    <p class="card-info">Soulful indie love ballad with over 330 M Spotify streams</p>
-                    <audio class="song">
-                        <source src="T2-3.mp3" type="audio/mp3">
-                    </audio>
-                </div>
-                <div class="card">
-                    <img src="img trend 9.jpg" class="card-img">
-                    <p class="card-title">Faheem Abdullah – “Ishq”</p>
-                    <p class="card-info">Surpassed 100 million+ streams, viral globally with soulful Urdu poetry.</p>
-                    <audio class="song">
-                        <source src="T2-4.mp3" type="audio/mp3">
-                    </audio>
-                </div>
-                <div class="card">
-                    <img src="img trend 10.jpg" class="card-img">
-                    <p class="card-title">Guru Randhawa – “Qatal”</p>
-                    <p class="card-info">Massive Punjabi-pop comeback hit, 20M+ streams, global tempo.</p>
-                    <audio class="song">
-                        <source src="T2-5.mp3" type="audio/mp3">
-                    </audio>
-                </div>
+            <div class="card" data-src="T1-2.mp3" data-title="Anxiety – Doechii" data-artist="Doechii" data-img="img trend 2.jpg">
+                <img src="img trend 2.jpg" class="card-img">
+                <p class="card-title">“Anxiety” – Doechii</p>
+                <p class="card-info">A bold, introspective anthem blending hip-hop storytelling.</p>
             </div>
-
-             <h2>Trending now near you </h2>
-            <div class="cards-container">
-                <div class="card">
-                    <img src="img trend 11.jpg" class="card-img">
-                    <p class="card-title">Sachin–Jigar – “Apna Bana Le”</p>
-                    <p class="card-info">Massive romantic hit: 438M+ Spotify streams, Bollywood staple</p>
-                    <audio class="song">
-                        <source src="T3-1.mp3" type="audio/mp3">
-                    </audio>
-                </div>
-                <div class="card">
-                    <img src="img trend 12.jpeg" class="card-img">
-                    <p class="card-title">Ed Sheeran – “Sapphire”</p>
-                    <p class="card-info">Joyful East‑West fusion celebrating India with Punjabi, sitar, SRK cameo</p>
-                    <audio class="song">
-                        <source src="T3-2.mp3" type="audio/mp3">
-                    </audio>
-                </div>
-                <div class="card">
-                    <img src="img trend 13.jpg" class="card-img">
-                    <p class="card-title">Talha Anjum – “Departure Lane”</p>
-                    <p class="card-info">Chart‑topping Urdu‑rap musing, sampled sarangi, viral across India‑Pakistan.</p>
-                    <audio class="song">
-                        <source src="T3-3.mp3" type="audio/mp3">
-                    </audio>
-                </div>
-                <div class="card">
-                    <img src="img trend 14.jpg" class="card-img">
-                    <p class="card-title">Jubin Nautiyal – “Ishq Mera</p>
-                    <p class="card-info">Emotional romantic reunion, heartfelt vocals over mountain visuals.</p>
-                    <audio class="song">
-                        <source src="T3-4.mp3" type="audio/mp3">
-                    </audio>
-                </div>
-                <div class="card">
-                    <img src="img trend 15.webp" class="card-img">
-                    <p class="card-title">Badshah – “Galiyon ke Ghalib”</p>
-                    <p class="card-info">Synth‑pop anthem with dynamic dance debut, showcasing artistic rebirth.</p>
-                    <audio class="song">
-                        <source src="T3-5.mp3" type="audio/mp3">
-                    </audio>
-                </div>
+            <div class="card" data-src="T1-3.mp3" data-title="Pink Pony Club – Chappell Roan" data-artist="Chappell Roan" data-img="img trend 3.webp">
+                <img src="img trend 3.webp" class="card-img">
+                <p class="card-title">Pink Pony Club – Chappell Roan</p>
+                <p class="card-info">An empowering queer-joy anthem celebrating self-acceptance</p>
             </div>
-            <h2>Top Global songs </h2>
-            <div class="cards-container">
-                <div class="card">
-                    <img src="top 1.jpg" class="card-img">
-                    <p class="card-title">Top songs Global</p>
-                    <p class="card-info"></p>
-                </div>
-                <div class="card">
-                    <img src="top 2.jpg" class="card-img">
-                    <p class="card-title">Top songs Global”</p>
-                    <p class="card-info"></p>
-                </div>
-                <div class="card">
-                    <img src="top3.jpg" class="card-img">
-                    <p class="card-title">Top songs Global”</p>
-                    <p class="card-info"></p>
-                </div>
-                <div class="card">
-                    <img src="top 4.jpg" class="card-img">
-                    <p class="card-title">Top songs Global</p>
-                    <p class="card-info"></p>
-                </div>
-                <div class="card">
-                    <img src="top 5.jpg" class="card-img">
-                    <p class="card-title">Top songs Global</p>
-                    <p class="card-info"></p>
-                </div>
+            <div class="card" data-src="T1-4.mp3" data-title="“Nokia” – Drake" data-artist="Drake" data-img="img trend 4.webp">
+                <img src="img trend 4.webp" class="card-img">
+                <p class="card-title">“Nokia” – Drake</p>
+                <p class="card-info">Energetic rap-pop anthem sampling the iconic Nokia ringtone</p>
             </div>
-
-            <div class="footer">
-                <div class="line"></div>
+            <div class="card" data-src="T1-5.mp3" data-title="“What I Want” – Morgan Wallen ft. Tate McRae" data-artist="Morgan Wallen ft. Tate McRae" data-img="img trend 5.jpeg">
+                <img src="img trend 5.jpeg" class="card-img">
+                <p class="card-title">“What I Want” – Morgan Wallen ft. Tate McRae</p>
+                <p class="card-info">Debuted at No 1; first female-led Wallen duet, blending country-pop</p>
             </div>
+        </div>
 
-            <div class="music-player">
-            <!-- Left album (like Spotify) -->
+        <!-- Trending part 1 -->
+        <h2>Trending now near you - Part 1</h2>
+        <div class="cards-container">
+            <div class="card" data-src="T2-1.mp3" data-title="Shubh – Supreme" data-artist="Shubh" data-img="img trend 6.jpg">
+                <img src="img trend 6.jpg" class="card-img">
+                <p class="card-title">Shubh – “Supreme”</p>
+                <p class="card-info">Dominant Punjabi anthem topping Spotify India and entering global charts</p>
+            </div>
+            <div class="card" data-src="T2-2.mp3" data-title="Sachet – Raanjhan" data-artist="Sachet" data-img="img trend 7.jpg">
+                <img src="img trend 7.jpg" class="card-img">
+                <p class="card-title">Sachet – “Raanjhan”</p>
+                <p class="card-info">Massive Bollywood ballad, dominated India’s Spotify</p>
+            </div>
+            <div class="card" data-src="T2-3.mp3" data-title="Anuv Jain – Jo Tum Mere Ho" data-artist="Anuv Jain" data-img="img trend 8.jpg">
+                <img src="img trend 8.jpg" class="card-img">
+                <p class="card-title">Anuv Jain – “Jo Tum Mere Ho”</p>
+                <p class="card-info">Soulful indie love ballad with over 330 M Spotify streams</p>
+            </div>
+            <div class="card" data-src="T2-4.mp3" data-title="Faheem Abdullah – Ishq" data-artist="Faheem Abdullah" data-img="img trend 9.jpg">
+                <img src="img trend 9.jpg" class="card-img">
+                <p class="card-title">Faheem Abdullah – “Ishq”</p>
+                <p class="card-info">Surpassed 100 million+ streams, viral globally with soulful Urdu poetry</p>
+            </div>
+            <div class="card" data-src="T2-5.mp3" data-title="Guru Randhawa – Qatal" data-artist="Guru Randhawa" data-img="img trend 10.jpg">
+                <img src="img trend 10.jpg" class="card-img">
+                <p class="card-title">Guru Randhawa – “Qatal”</p>
+                <p class="card-info">Massive Punjabi-pop comeback hit, 20M+ streams, global tempo</p>
+            </div>
+        </div>
+
+        <!-- Trending part 2 -->
+        <h2>Trending now near you - Part 2</h2>
+        <div class="cards-container">
+            <div class="card" data-src="T3-1.mp3" data-title="Sachin–Jigar – Apna Bana Le" data-artist="Sachin–Jigar" data-img="img trend 11.jpg">
+                <img src="img trend 11.jpg" class="card-img">
+                <p class="card-title">Sachin–Jigar – “Apna Bana Le”</p>
+                <p class="card-info">Massive romantic hit: 438M+ Spotify streams, Bollywood staple</p>
+            </div>
+            <div class="card" data-src="T3-2.mp3" data-title="Ed Sheeran – Sapphire" data-artist="Ed Sheeran" data-img="img trend 12.jpeg">
+                <img src="img trend 12.jpeg" class="card-img">
+                <p class="card-title">Ed Sheeran – “Sapphire”</p>
+                <p class="card-info">Joyful East‑West fusion celebrating India with Punjabi, sitar, SRK cameo</p>
+            </div>
+            <div class="card" data-src="T3-3.mp3" data-title="Talha Anjum – Departure Lane" data-artist="Talha Anjum" data-img="img trend 13.jpg">
+                <img src="img trend 13.jpg" class="card-img">
+                <p class="card-title">Talha Anjum – “Departure Lane”</p>
+                <p class="card-info">Chart‑topping Urdu‑rap musing, sampled sarangi, viral across India‑Pakistan</p>
+            </div>
+            <div class="card" data-src="T3-4.mp3" data-title="Jubin Nautiyal – Ishq Mera" data-artist="Jubin Nautiyal" data-img="img trend 14.jpg">
+                <img src="img trend 14.jpg" class="card-img">
+                <p class="card-title">Jubin Nautiyal – “Ishq Mera”</p>
+                <p class="card-info">Emotional romantic reunion, heartfelt vocals over mountain visuals</p>
+            </div>
+            <div class="card" data-src="T3-5.mp3" data-title="Badshah – Galiyon ke Ghalib" data-artist="Badshah" data-img="img trend 15.webp">
+                <img src="img trend 15.webp" class="card-img">
+                <p class="card-title">Badshah – “Galiyon ke Ghalib”</p>
+                <p class="card-info">Synth‑pop anthem with dynamic dance debut, showcasing artistic rebirth</p>
+            </div>
+        </div>
+
+        <!-- Top Global Songs -->
+        <h2>Top Global Songs</h2>
+        <div class="cards-container">
+            <div class="card" data-src="T4-1.mp3" data-title="Blinding Lights – The Weeknd" data-artist="The Weeknd" data-img="top 1.jpg">
+                <img src="top 1.jpg" class="card-img">
+                <p class="card-title">Blinding Lights – The Weeknd</p>
+                <p class="card-info">Iconic synth-pop hit with retro vibes and massive global streams</p>
+            </div>
+            <div class="card" data-src="T4-2.mp3" data-title="Levitating – Dua Lipa" data-artist="Dua Lipa" data-img="top 2.jpg">
+                <img src="top 2.jpg" class="card-img">
+                <p class="card-title">Levitating – Dua Lipa</p>
+                <p class="card-info">Uplifting pop anthem about freedom and joy</p>
+            </div>
+            <div class="card" data-src="T4-3.mp3" data-title="Watermelon Sugar – Harry Styles" data-artist="Harry Styles" data-img="top 3.jpg">
+                <img src="top3.jpg" class="card-img">
+                <p class="card-title">Watermelon Sugar – Harry Styles</p>
+                <p class="card-info">Sweet, nostalgic pop-rock track with infectious energy</p>
+            </div>
+            <div class="card" data-src="T4-4.mp3" data-title="Good 4 U – Olivia Rodrigo" data-artist="Olivia Rodrigo" data-img="top 4.jpg">
+                <img src="top 4.jpg" class="card-img">
+                <p class="card-title">Good 4 U – Olivia Rodrigo</p>
+                <p class="card-info">Empowered breakup anthem blending pop-punk and raw emotion</p>
+            </div>
+            <div class="card" data-src="T4-5.mp3" data-title="Stay – The Kid Laroi & Justin Bieber" data-artist="The Kid Laroi & Justin Bieber" data-img="top 5.jpg">
+                <img src="top 5.jpg" class="card-img">
+                <p class="card-title">Stay – The Kid Laroi & Justin Bieber</p>
+                <p class="card-info">Heartfelt collaboration about love and perseverance</p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="line"></div>
+        </div>
+
+        <!-- Music Player -->
+        <div class="music-player">
             <div class="album">
-              <img src="img trend 14.jpg" alt="Album Cover" class="album-cover">
-              <div class="album-info">
+                <img src="img trend 14.jpg" alt="Album Cover" class="album-cover">
+                <div class="album-info">
                     <p class="song-name">Song Name</p>
                     <p class="artist-name">Artist</p>
                 </div>
             </div>
 
-  <!-- Center Player Controls -->
-  <div class="player">
-    <div class="player-controls">
-      <i class="fa-solid fa-shuffle"></i>
-      <i class="fa-solid fa-backward"></i>
-      <i class="fa-solid fa-circle-play play-btn"></i>
-      <i class="fa-solid fa-forward"></i>
-      <i class="fa-solid fa-rotate"></i>
+            <audio id="global-audio"></audio>
+
+            <div class="player">
+                <div class="player-controls">
+                    <i class="fa-solid fa-shuffle"></i>
+                    <i class="fa-solid fa-backward"></i>
+                    <i class="fa-solid fa-circle-play play-btn"></i>
+                    <i class="fa-solid fa-forward"></i>
+                    <i class="fa-solid fa-rotate"></i>
+                </div>
+                <div class="playback-bar">
+                    <span class="curr-time">00:00</span>
+                    <input type="range" min="0" max="100" class="progressbar">
+                    <span class="tot-time">00:00</span>
+                </div>
+            </div>
+        </div>
+
     </div>
-    <div class="playback-bar">
-      <span class="curr-time">00:00</span>
-      <input type="range" min="0" max="100" class="progressbar">
-      <span class="tot-time">00:00</span>
-    </div>
-  </div>
-  <!-- GLOBAL AUDIO TAG -->
-  <audio id="global-audio"></audio>
 </div>
+
 <script src="spotify.js"></script>
 </body>
 </html>
