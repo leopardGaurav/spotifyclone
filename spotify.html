@@ -14,46 +14,71 @@
 <body>
 
 <div class="main">
-    <div class="sidebar">
-        <div class="nav">
-            <div class="nav-option" style="opacity:1;">
-                <i class="fa-solid fa-house"></i>
-                <a href="#">Home</a>
-            </div>
-            <div class="nav-option">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <a href="#">Search</a>
-            </div>
-        </div>
+     <div class="sidebar">
 
-        <div class="library">
-            <div class="options">
-                <div class="lib-option">
-                    <a href="#">Your Library</a>
-                </div>
-                <div class="icons">
-                    <i class="fa-solid fa-plus"></i>
-                    <i class="fa-solid fa-arrow-right"></i>
-                </div>
-            </div>
+    <div class="nav">
+      <div class="nav-option active" data-page="home">
+        <i class="fa-solid fa-house"></i>
+        <span>Home</span>
+      </div>
+      
 
-            <div class="lib-box">
-                <div class="box">
-                    <p class="box-p1">Create your first playlist</p>
-                    <p class="box-p2">it's easy, we'll help you</p>
-                    <button class="badge">Create playlist</button>
-                </div>
-            </div>
 
-            <div class="lib-box">
-                <div class="box">
-                    <p class="box-p1">Let's find some podcasts to follow</p>
-                    <p class="box-p2">we'll keep you updated on new episodes</p>
-                    <button class="badge">Browse podcasts</button>
-                </div>
-            </div>
-        </div>
+      <div class="nav-option" data-page="search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <span>Search</span>
+      </div>
     </div>
+    <!-- ===== PAGES ===== -->
+    <div id="search" class="page">
+     <h1>Search Page</h1>
+    </div>
+
+    <div id="home" class="page active-page">
+      <h1>Home Page</h1>
+    </div>
+     <!-- back to paqge -->
+      <div id="search" class="page">
+     <button class="back-btn">← Back</button>
+      <h1>Search Page</h1>
+      </div>
+
+
+
+    <div class="library">
+      <div class="nav-option" data-page="library">
+        <i class="fa-solid fa-book" id="addPlaylistBtn"></i>
+        <a href="#">Your Library</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ===== CONTENT ===== -->
+  <div class="main-content">
+
+    <div id="home" class="page active-page">
+      <h1>🏠 Home</h1>
+      <p>Home ka content yahan dikhega</p>
+    </div>
+
+    <div class="nav-option" data-page="search">
+      <h1>🔍 Search</h1>
+      <p>Search ka content yahan dikhega</p>
+    </div>
+
+    <div id="library" class="page">
+      <h1>📚 Your Library</h1>
+      <p>Library ka content yahan dikhega</p>
+      <!-- ✅ PLAYLIST CONTAINER YAHAN AAYEGA -->
+     <div class="playlists" id="playlistContainer">
+    <button class="badge" id="createPlaylistBtn">Create playlist</button>
+
+    </div>
+
+  </div>
+
+</div>
 
     <!-- Main Content -->
     <div class="main-content">
