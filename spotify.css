@@ -36,6 +36,7 @@
     height: 100px;
     padding: 0.5rem 0.75rem;
 }
+
 .nav-option {
     line-height: 2.5rem; 
     opacity: 0.7;
@@ -53,6 +54,37 @@
     font-size: 1rem ;
     margin-left:1rem;
 }
+
+/* home */
+.page {
+  display: none; /* sab page chhupa do */
+  opacity: 0;
+  transition: opacity 0.3s ease;  
+}
+
+.page.active-page {
+  display: block;
+  opacity: 1;  /* sirf active dikhao */
+}
+.nav-option {
+  cursor: pointer;
+}
+/* back to home */
+.back-btn {
+  background: #0d0d0d;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 12px;
+}
+
+.back-btn:hover {
+  background: #232323;
+}
+
+
 
 .library {
     border-radius: 0.5rem;
@@ -77,6 +109,71 @@
     text-decoration: none;
     color: #fff;
 }
+
+/* playelist */
+.playlist-item {
+  padding: 8px;
+  margin-top: 6px;
+  border-radius: 4px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.playlist-item:hover {
+  background: #232323;
+  opacity: 1;
+}
+
+
+  .sidebar {
+      width: 250px;
+      background: #000;
+      padding: 16px;
+    }
+
+    .nav-option {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 6px;
+      opacity: 0.7;
+    }
+
+    .nav-option a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .nav-option:hover{
+        background: #0d0d0d;
+        opacity: 1;
+        transform: scale(1.05); 
+    }
+    .nav-option.active {
+      background: #0d0d0d;
+      opacity: 1;
+    }
+
+    .library {
+      margin-top: 30px;
+    }
+
+    /* ===== MAIN CONTENT ===== */
+    .main-content {
+      flex: 1;
+      padding: 20px;
+    }
+
+    .page {
+      display: none;
+    }
+
+    .page.active-page {
+      display: block;
+    }
+
 /* -------------------------------------------------- */
 .main-content {
     background-color:#121212;
@@ -247,8 +344,8 @@ a {
 .footer{
     height:250px;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content:flex-start;
 }
 .line {
     width: 90%;
@@ -266,34 +363,37 @@ a {
   height: 72px;
   background-color: #181818;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 1rem;
+  justify-content: flex-start;  /* 🔥 left */
+  align-items: center;        /* ✅ ADD */
+  padding: 0 16px;
   box-sizing: border-box;
   z-index: 100;
 }
 
+
 .album {
-  width: 25%;
+  width: 20%;
   display: flex;
   align-items: center;
-  gap: 10px;
-}
-
-.album-cover {
-  height: 56px;
-  width: 56px;
-  border-radius: 4px;
+  gap: 12px;
 }
 
 .album-info {
   display: flex;
   flex-direction: column;
-  justify-content: center;
 }
 
+
+.album-cover {
+  height: 56px;
+  width: 56px;
+  border-radius: 14px;
+}
+
+
+
 .song-name {
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 600;
   color: white;
 }
@@ -304,34 +404,37 @@ a {
 }
 
 .player {
-  width: 50%;
+  width: 50%;                 /* 🔥 50% → 40% */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-left: 40px;         /* 🔥 thoda hi left */
 }
+
 
 .player-controls {
   display: flex;
-  gap: 1.5rem;
-  align-items: center;
-  font-size: 1.1rem;
+  gap: 20px;
+  align-items: center;        /* left ❌ */
   color: white;
 }
+
+.playback-bar {
+  width: 100%;
+  display: flex;
+  align-items: center;        /* left ❌ */
+  gap: 8px;
+  margin-top: 6px;
+  font-size: 0.75rem;
+  color: #b3b3b3;
+}
+
 
 .play-btn {
   font-size: 1.6rem;
 }
 
-.playback-bar {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-top: 6px;
-  font-size: 0.7rem;
-  color: #b3b3b3;
-  width: 100%;
-}
 
 .progressbar {
   flex-grow: 1;
@@ -342,10 +445,11 @@ a {
 }
 
 .control {
+  margin-left: auto;
   width: 25%;
   display: flex;
   justify-content: flex-end;
-  align-items: center;
-  padding-right: 1rem;
+  align-items: center;       
+  padding-right: 16px;
   color: white;
 }
