@@ -81,3 +81,53 @@ globalAudio.addEventListener('timeupdate', () => {
 progressBar.addEventListener('input', () => {
     globalAudio.currentTime = (progressBar.value / 100) * globalAudio.duration;
 });
+
+// ----------------------------------------------------
+
+
+//   home
+const navOptions = document.querySelectorAll(".nav-option");
+const pages = document.querySelectorAll(".page");
+
+navOptions.forEach(option => {
+  option.addEventListener("click", () => {
+
+    // 1️⃣ sabka active hatao
+    navOptions.forEach(o => o.classList.remove("active"));
+    pages.forEach(p => p.classList.remove("active-page"));
+
+    // 2️⃣ jispe click hua usko active banao
+    option.classList.add("active");
+
+    // 3️⃣ uska page dikhao
+    const pageId = option.getAttribute("data-page");
+    const page = document.getElementById(pageId);
+
+      if (page) {
+        page.classList.add("active-page");
+      } else {
+        console.error("Page not found:", pageId);
+      }
+  });
+});
+//reverse home and search
+const backButtons = document.querySelectorAll(".back-btn");
+
+backButtons.forEach(btn => {
+  btn.addEventListener("click", () => {
+    // 1️⃣ Sab pages hide karo
+    pages.forEach(p => p.classList.remove("active-page"));
+    
+    // 2️⃣ All nav-options active remove
+    navOptions.forEach(o => o.classList.remove("active"));
+
+    // 3️⃣ Home page show karo
+    const homePage = document.getElementById("home");
+    homePage.classList.add("active-page");
+
+    // 4️⃣ Home button active karo
+    const homeNav = document.querySelector('.nav-option[data-page="home"]');
+    homeNav.classList.add("active");
+  });
+});
+
